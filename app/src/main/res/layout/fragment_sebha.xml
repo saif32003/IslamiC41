@@ -1,15 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lightBlack"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/sebha_bg"
     tools:context=".ui.main.fragments.quran.QuranFragment">
+    <ImageView
+        android:id="@+id/isalmiLogo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/isalmi_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent=".8" />
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <ImageView
+        android:id="@+id/headsebha"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        app:layout_constraintTop_toBottomOf="@id/isalmiLogo"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/up_sebha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent=".2"
+        />
+    <ImageView
+        android:id="@+id/sebha"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/sebhabody"
+        app:layout_constraintWidth_percent=".9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headsebha"
+        android:layout_marginTop="-16dp"
+        />
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@id/sebha"
+        app:layout_constraintEnd_toEndOf="@id/sebha"
+        app:layout_constraintTop_toTopOf="@id/sebha"
+        app:layout_constraintBottom_toBottomOf="@id/sebha"
+        >
+        <TextView
+            android:id="@+id/tvZikr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="سبحان الله"
+            android:textColor="@color/white"
+            android:textSize="36sp"
+            android:textAlignment="center"
+            android:fontFamily="cursive"
+            />
+
+        <TextView
+            android:id="@+id/tvCounter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="36sp"
+            android:textAlignment="center"
+            android:paddingTop="16dp"
+            />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
